@@ -2,7 +2,6 @@
 
 <head>
     <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
     <title>Note Taker App</title>
 </head>
 
@@ -20,14 +19,17 @@
 <script>
     const notes = JSON.parse(localStorage.getItem("noteTakerApp"));
 
-    const list = document.querySelector("#notes-list");
+    if (notes) {
+        const list = document.querySelector("#notes-list");
 
-    notes.forEach(element => {
-        const li = document.createElement("LI");
-        const textNode = document.createTextNode(element);
+        notes.forEach(element => {
+            const li = document.createElement("LI");
+            const textNode = document.createTextNode(element);
 
-        li.append(textNode);
-        list.append(li);
-    });
+            li.append(textNode);
+            list.append(li);
+
+        });
+    }
 
 </script>

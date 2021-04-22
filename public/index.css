@@ -1,6 +1,14 @@
 body {
-    background-color: aqua;
+    background-color: #494D6E;
     color: black;
+}
+
+h2 {
+    color: #fff;
+}
+
+a {
+    color: #009CCC;
 }
 
 div.front-page {
@@ -16,16 +24,24 @@ div.second-page {
 }
 
 .note-area {
-width: 50%;
-height: 30vh;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  resize: vertical;
+    width: 50%;
+    height: 30vh;
+    padding: 12px;
+    border: 2px solid #3d405b;
+    border-radius: 10px;
+    resize: vertical;
+    background-color: #52567A;
+    color: #fff;
+    outline: none;
+    font-size: 1.5rem;
+}
+
+.note-area::placeholder {
+    color: #fff;
 }
 
 .submit {
-    background-color: #4CAF50;
+    background-color: #81b29a;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -35,11 +51,15 @@ height: 30vh;
     width: 20%;
 }
 
-a {
-    color: brown;
-}
-
 .notes-link {
     margin-top: 20px;
     padding-top: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#notes-list {
+    color: #fff;
 }

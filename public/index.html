@@ -2,14 +2,13 @@
 
 <head>
     <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
     <title>Note Taker App</title>
 </head>
 
 <body>
     <div class="front-page">
         <h2 class="header">Note Taker App</h2>
-        <textarea id="note" name="note-text" class="note-area"></textarea>
+        <textarea id="note" name="note-text" class="note-area" autofocus placeholder="Enter a note here..."></textarea>
         <br>
         <button id="submit" onclick="saveNote()" class="submit">Save Note</button>
         <div class="notes-link">
@@ -19,10 +18,10 @@
 </body>
 
 <script>
-    var textElement = document.getElementById("note")
+    const textArea = document.getElementById("note");
 
     function saveNote() {
-        const trimmedText = textElement.value.trim();
+        const trimmedText = textArea.value.trim();
 
         if (trimmedText.length === 0) {
             return alert("This note is blank. Please type a note and click Save Note.");
@@ -32,10 +31,13 @@
             let notes = JSON.parse(localStorage.getItem("noteTakerApp"));
             notes.push(trimmedText);
             localStorage.setItem("noteTakerApp", JSON.stringify(notes));
-            return
+            textArea.value = "";
+            return;
         }
 
         let notes = JSON.stringify([trimmedText]);
         localStorage.setItem("noteTakerApp", notes);
+
+        textArea.value = "";
     }
 </script>
