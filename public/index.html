@@ -5,22 +5,37 @@
     <script src="index.js"></script>
     <title>Note Taker App</title>
 </head>
+
 <body>
     <div class="front-page">
         <h2 class="header">Note Taker App</h2>
-            <textarea id="note" name="note-text" class="note-area"></textarea>
-            <br>
-            <button id="submit" onclick="saveNote()" class="submit">Save Note</button>
+        <textarea id="note" name="note-text" class="note-area"></textarea>
+        <br>
+        <button id="submit" onclick="saveNote()" class="submit">Save Note</button>
         <div class="notes-link">
-            <a href="index2.html" >View Notes</a>
-        </div> 
+            <a href="index2.html">View Notes</a>
+        </div>
     </div>
 </body>
 
 <script>
-var textElement = document.getElementById("note")
+    var textElement = document.getElementById("note")
 
-function saveNote() {
-    
-}
+    function saveNote() {
+        const trimmedText = textElement.value.trim();
+
+        if (trimmedText.length === 0) {
+            return alert("This note is blank. Please type a note and click Save Note.");
+        }
+
+        if (localStorage.getItem("noteTakerApp")) {
+            let notes = JSON.parse(localStorage.getItem("noteTakerApp"));
+            notes.push(trimmedText);
+            localStorage.setItem("noteTakerApp", JSON.stringify(notes));
+            return
+        }
+
+        let notes = JSON.stringify([trimmedText]);
+        localStorage.setItem("noteTakerApp", notes);
+    }
 </script>
