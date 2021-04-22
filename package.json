@@ -1,0 +1,19 @@
+{
+  "name": "notesapp",
+  "version": "1.0.0",
+  "description": "create a node server to serve files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheycallmeNate/js-wk-4-assignment.git"
+  },
+  "author": "Nathan Mangal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheycallmeNate/js-wk-4-assignment/issues"
+  },
+  "homepage": "https://github.com/TheycallmeNate/js-wk-4-assignment#readme"
+}
